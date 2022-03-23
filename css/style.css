@@ -1,0 +1,215 @@
+@charset "UTF-8";  /* 문자인코딩방식 UTF-8로 지정해야 한글이 정상적으로 나옴 */
+
+/* 나눔고딕 cdn - daum에서 가져옴 */
+@import url(http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css);
+
+
+/* ========== 아래 코드에 이해를 돕기 위한 부연설명 영성 공지드립니다. ========== */
+/* html(생활코딩) : 2분 3초  https://www.youtube.com/watch?v=OGFgdro160I&list=PLuHgQVnccGMDUzDDCKW-pCZQY-MMCX5yB */
+/* css(생활코딩) : 15분 21초  https://www.youtube.com/watch?v=ONcmkf07EuI&list=PLuHgQVnccGMDaVaBmkX0qfB45R_bYrV62 */
+/* inline, block(생활코딩) : 5분 39초  https://www.youtube.com/watch?v=4eCrKfREDi8 */
+/* @charset "UTF-8"; 문자 인코딩 방식 (얄팍한 코딩사전) : 7분 7초 https://www.youtube.com/watch?v=1jo6q4dihoU  */
+/* position (생활코딩) : 11분  https://www.youtube.com/watch?v=0kA0mBvumrg */
+/* float (생활코딩) : 7분 56초 https://www.youtube.com/watch?v=qSGXLWKOXHM */
+/* box-shadow (리베하얀) : 7분22초 -  https://www.youtube.com/watch?v=18fWA4r-B9w */
+/* display:flex (엘리) : 24분20초 -  https://www.youtube.com/watch?v=7neASrWEFEM */
+/* javascript (생활코딩) : 23분 51초  https://www.youtube.com/watch?v=PZIPsKgWJiw&list=PLuHgQVnccGMA4uSig3hCjl7wTDeyIeZVU */
+
+/* reset */
+
+* {    /* (*) 표시는 전체선택자를 의미 */ 
+  margin: 0;  /* 바깥여백 */
+  padding: 0;  /* 안쪽여백 */
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* 목록에 점 없애기 */
+}
+
+body {
+  background: #fff; /* 배경흰색 */
+  font-family: 'Nanum Gothic'  /* 서체 나눔고딕으로 설정 */ 
+}
+
+a {
+  text-decoration: none;  /* 링크에 라인생김 없애기*/ 
+}
+
+img:hover {
+  opacity: 0.7;   
+  /* 모든 이미지 (hover : 마우스 올렸을때) 투명도 70% -> 로고와 사람 - css 에서 이미지 넣은것은 적용 안됨  */ 
+}
+
+
+
+/* 전체 레이아웃 */
+#wrap {
+  width: 100%;  /* 전체 페이지 가로 100%로 지정 */ 
+  min-width: 1400px;  
+  /* min-width 는, PC에서는 정상적으로 나오나, 이미지를 배경에서 background: url("../images/bg.png") center/cover; 할때
+  모바일에서 보면 잘려 보이는 현상이 생겨서 그와같은 현상을 해결하기 위해 min-width: 1400px;  넣어줌 */ 
+}
+
+/* header */
+#wrap header {
+  width: 100%; /* 로고와 메뉴가 있는 상단 영역 전체 100%로 채움 */ 
+  height: 100px; /* 높이값은, 100픽셀로 채움 */
+  background: rgba(147,173, 178); /* 흰색에 90% 투명도 표시*/
+  position: fixed; /* position은, 요소의 위치를 결정해주는 속성으로 상단 영역 전체 고정시켜줌 */ 
+  left: 0; /* 왼쪽 위치 0에 맞춤 */ 
+  top: 0; /* 상단 위치 0에 맞춤*/ 
+
+}
+
+#wrap header .headerInner {
+  width: 1400px; /* 상단 영역의 로고와 메뉴가 위치할 가로 전체 사이즈 1400픽셀*/ 
+  height: 100px; 
+  margin: 0 auto; /* 바깥 여백 - 상단과 하단은 0, 좌우는 auto로 지정시 중앙정렬됨 */ 
+  display: flex; /* .logo와 .menu의 부모 위치인  .headerInner 에서, flex 지정시 좌우 정렬됨 */ 
+  justify-content: space-between; 
+  /* display: flex; 가 있을때의 정렬 방법으로, 전체 사이즈인 1400px에 각 요소가 양 끝에 붙게 하는 속성을 갖음  */ 
+}
+
+#wrap header .headerInner h1.logo {width:500px; margin-top:30px;} /* 추가 ＠ */
+
+
+#wrap header .menu { 
+  width: 500%; /* 메뉴의 가로 사이즈 80% */ 
+}
+
+#wrap header .menu ul {
+  width: 750px; /* 메뉴 자체의 가로 사이즈를 750픽셀로 즈정해줌 */ 
+  display: flex; /* 리스트를 좌우로 배치시킴 */
+  justify-content: space-between;   
+  float: right; /* 전체를 오른쪽으로 붙여줌 */ 
+}
+
+#wrap header .menu ul li {
+  margin-left: 5%; /* 각각의 리스트 사이 여백을 줌 : 왼쪽으로 2% */ 
+  margin-top: 35px; /* 메뉴 상단에서 35픽셀 떨어뜨려줌 */ 
+}
+
+#wrap header .menu ul li a {
+  color: #000000b0; /* 메뉴의 링크(a)가 들어간 글자 색 지정 */ 
+  font-size: 22px; /* 메뉴 글씨 사이즈 22픽셀 사이즈로 지정 - 글씨를 지정하지 않을시 기본 사이즈 : 16px */ 
+  font-weight: 600; /* 글씨의 굵기 100이 제일 얇고 800이 두꺼우며, 그냥 굵게는 bold로 표시 */ 
+}
+
+#wrap header .menu ul li a:hover,
+#wrap header .menu ul li a:focus {
+  text-decoration: underline; 
+  /* 메뉴에 마우스 올렸을때 라인 생기도록 하기 - hover 는 마우스 올렸을때, focus는 눌렀을때 색 고정  */ 
+  color: #386a8bbd; /* 글자색  */ 
+}
+
+#wrap section.main {
+  width: 100%; 
+  height: 1000px; /* 메인 높이값 1000픽셀로 지정 */  
+  position: relative; /* 글씨를 고정시켜주기 위한 기준점 잡아줌 */ 
+  z-index: -1; 
+  /* 메뉴가 포지션 fixed로 되어있는데, 메뉴보다 상단에 올라가있어 그 아래로 내려주는 의미로 -로 순서 표시, 숫자가 클수로 위에 위치됨 */   
+  
+}
+
+#wrap section.main h2 {
+  font-size: 3em;  /* 1em = 16px 이므로, 7em = 112px */  
+  font-weight: 400; /* 글자 굵기 500 정도의 굵기로 지정 */ 
+  color: rgb(0, 0, 0); /* 글자색 흰색으로 지정 */   
+  position: absolute;
+   /* 부모 요소인 section.main 영역에 position: relative; 로 기준점을 잡아주면,  
+   그 자녀 요소인 h2에 position: absolute; 으로 위치를 잡을시 부모를 기준으로 위치하게됨
+   section.main 영역에 position: relative;을 빼서 확인하면 전체 html을 기준으로 정렬되지만, 
+   넣을시 부모 사이즈인 높이 1000픽셀을 기준으로 위치를 잡게 됨 */ 
+  top: 22%; /* 포지션 속성이 나올때 따라다니는 속성으로 메뉴 100픽셀을 고려하여 상단에서 60% 위치로 고정시켜줌 */  
+  left: 50%; /* 왼쪽 위치에서 50%로 지정 */ 
+  transform: translate(-50%, -50%); /* 위의 왼쪽 50% 지정시 250픽셀의 오차가 있으므로 정확히 맞추기 위해 넣어줌 */ 
+  text-align: center; /* 글자 전체 중앙정렬 */  
+}
+
+
+#wrap section.main h2 ul {
+  width: 1400px; 
+  display: list-item; /* 사진 4개 전체 좌우로 정렬시킴 */
+  justify-content:center; /* 지정해준 1400픽셀 기준으로 1번과 4번 사진은 양 끝에 붙고 나머지는 알아서 여백을 만들어 배치됨 */ 
+  margin: 0 auto;  /* 바깥 여백 - 상단과 하단은 0, 좌우는 auto로 지정시 중앙정렬됨 */ 
+}
+
+#wrap section.main h2 ul li {
+  width: 1400px;
+  height: 500px;
+  
+  border-radius: 10px; /* 박스룰 10픽셀만큼 둥근사각형 만둘어줌 */ 
+}
+
+#wrap section.main h2 ul li a {
+  display: block; /* (글씨처럼) inline 구조의 속성을 (박스라인) block 구조로 속성 변경  */ 
+}
+#wrap section.main h3 {
+  font-size: 1.5em;  /* 1em = 16px 이므로, 7em = 112px */  
+  font-weight: 400; /* 글자 굵기 500 정도의 굵기로 지정 */ 
+  color: rgb(0, 0, 0); /* 글자색 흰색으로 지정 */   
+  position: absolute;
+   /* 부모 요소인 section.main 영역에 position: relative; 로 기준점을 잡아주면,  
+   그 자녀 요소인 h2에 position: absolute; 으로 위치를 잡을시 부모를 기준으로 위치하게됨
+   section.main 영역에 position: relative;을 빼서 확인하면 전체 html을 기준으로 정렬되지만, 
+   넣을시 부모 사이즈인 높이 1000픽셀을 기준으로 위치를 잡게 됨 */ 
+  top: 35%; /* 포지션 속성이 나올때 따라다니는 속성으로 메뉴 100픽셀을 고려하여 상단에서 60% 위치로 고정시켜줌 */  
+  left: 50%; /* 왼쪽 위치에서 50%로 지정 */ 
+  transform: translate(-50%, -50%); /* 위의 왼쪽 50% 지정시 250픽셀의 오차가 있으므로 정확히 맞추기 위해 넣어줌 */ 
+  text-align: center; /* 글자 전체 중앙정렬 */  
+}
+
+
+#wrap section.main h4 {
+  font-size: 3em;  /* 1em = 16px 이므로, 7em = 112px */  
+  font-weight: 400; /* 글자 굵기 500 정도의 굵기로 지정 */ 
+  color: rgb(0, 0, 0); /* 글자색 흰색으로 지정 */   
+  position: absolute;
+   /* 부모 요소인 section.main 영역에 position: relative; 로 기준점을 잡아주면,  
+   그 자녀 요소인 h2에 position: absolute; 으로 위치를 잡을시 부모를 기준으로 위치하게됨
+   section.main 영역에 position: relative;을 빼서 확인하면 전체 html을 기준으로 정렬되지만, 
+   넣을시 부모 사이즈인 높이 1000픽셀을 기준으로 위치를 잡게 됨 */ 
+  top: 80%; /* 포지션 속성이 나올때 따라다니는 속성으로 메뉴 100픽셀을 고려하여 상단에서 60% 위치로 고정시켜줌 */  
+  left: 50%; /* 왼쪽 위치에서 50%로 지정 */ 
+  transform: translate(-50%, -50%); /* 위의 왼쪽 50% 지정시 250픽셀의 오차가 있으므로 정확히 맞추기 위해 넣어줌 */ 
+  text-align: center; /* 글자 전체 중앙정렬 */  
+}
+
+
+#wrap section.main h4 ul {
+  width: 1400px; 
+  display: list-item; /* 사진 4개 전체 좌우로 정렬시킴 */
+  justify-content:center; /* 지정해준 1400픽셀 기준으로 1번과 4번 사진은 양 끝에 붙고 나머지는 알아서 여백을 만들어 배치됨 */ 
+  margin: 0 auto;  /* 바깥 여백 - 상단과 하단은 0, 좌우는 auto로 지정시 중앙정렬됨 */ 
+}
+
+#wrap section.main h4 ul li {
+  width: 1400px;
+  height: 500px;
+  
+  border-radius: 10px; /* 박스룰 10픽셀만큼 둥근사각형 만둘어줌 */ 
+}
+
+#wrap section.main h4 ul li a {
+  display: block; /* (글씨처럼) inline 구조의 속성을 (박스라인) block 구조로 속성 변경  */ 
+}
+
+/* footer */
+
+#wrap footer {
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid #fff;
+  background: rgba(147,173, 178)
+}
+
+#wrap footer p {
+  color: #000000b0;
+  text-align: center;
+  padding-top: 30px; /* 하단 주소 위치를 상단을 기준으로 안쪽여백 30픽셀 줌 */
+  font-size: 18px;
+  font-weight: 400;
+}

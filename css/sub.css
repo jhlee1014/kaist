@@ -1,0 +1,198 @@
+@charset "UTF-8";  /* 문자인코딩방식 UTF-8로 지정해야 한글이 정상적으로 나옴 */
+
+/* 나눔고딕 cdn - daum에서 가져옴 */
+@import url(http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css);
+
+
+/* reset  - style.css에 설명되어있음 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background: #fff;
+  font-family: 'Nanum Gothic'
+}
+
+a {
+  text-decoration: none;
+}
+
+img:hover {
+  opacity: 0.7;
+}
+/* 전체 레이아웃 */
+#wrap {
+  width: 100%;
+  min-width: 1400px;
+}
+/* header */
+#wrap header {
+  width: 100%; /* 로고와 메뉴가 있는 상단 영역 전체 100%로 채움 */ 
+  height: 100px; /* 높이값은, 100픽셀로 채움 */
+  background:  rgba(147,173, 178); /* 흰색에 90% 투명도 표시*/
+  position: fixed; /* position은, 요소의 위치를 결정해주는 속성으로 상단 영역 전체 고정시켜줌 */ 
+  left: 0; /* 왼쪽 위치 0에 맞춤 */ 
+  top: 0; /* 상단 위치 0에 맞춤*/ 
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2); 
+  /* 그림자처리 - x좌표쪽으로 2픽셀 이동, y좌표쪽으로 2픽셀 이동, 그림자 퍼짐 정도 3픽셀 이동, 검정색의 투명도 20% */ 
+}
+
+#wrap header .headerInner {
+  width: 1400px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#wrap header .headerInner h1.logo {width:500px; margin-top:30px;} /* 추가 ＠ */
+
+#wrap header .menu {
+  width: 500%;
+}
+
+#wrap header .menu ul {
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+}
+
+#wrap header .menu ul li {
+  margin-left: 5%;
+  margin-top: 35px;
+}
+
+#wrap header .menu ul li a {
+  color: #000000b0; /* 메뉴의 링크(a)가 들어간 글자 색 지정 */ 
+  font-size: 22px; /* 메뉴 글씨 사이즈 22픽셀 사이즈로 지정 - 글씨를 지정하지 않을시 기본 사이즈 : 16px */ 
+  font-weight: 600; /* 글씨의 굵기 100이 제일 얇고 800이 두꺼우며, 그냥 굵게는 bold로 표시 */ 
+}
+
+#wrap header .menu ul li a:hover,
+#wrap header .menu ul li a:focus {
+  text-decoration: underline;
+  color: #386a8bbd; /* 글자색  */ 
+  ;
+}
+
+
+
+
+
+/* 서브 컨텐츠 영역 */
+
+
+#wrap section {
+  margin-bottom: 200px;
+}
+
+/* sub img - 각 서브페이지 6종 이미지 연결 */
+
+#wrap section .Interest {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: -1;
+  
+}
+
+#wrap section .Teaching {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: -1;
+  
+}
+
+#wrap section .Papers {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: -1;
+  
+}
+
+
+#wrap section .Education {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: -1;
+ 
+}
+
+#wrap section .Talks {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: -1;
+  
+}
+
+
+/* 서브 하단 글자 스타일 */
+
+#wrap section .text {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+#wrap section .text h2 {
+  padding: 40px 0 20px 0;
+  margin-bottom: 50px;
+  font-size: 35px;
+  color: #000;
+  border-bottom: 1px solid #ddd; /* 글자 하단에 회색 라인 지정 */
+}
+
+#wrap section .text p.title {
+  padding: 0px 0 15px 0; /* 안쪽 여백 순서 - 상단,오른쪽,하단,왼쪽 */
+  color: #000;
+  font-size: 28px;
+  margin-top: 20px;
+  font-weight: bold; /* 글자 굵게 지정 */
+}
+#wrap section .text p.body {
+  padding: 10px 0 30px 0; /* 안쪽 여백 순서 - 상단,오른쪽,하단,왼쪽 */
+  color: #000;
+  font-size: 25px;
+  line-height: 1.7; /* 각 내용의 행 높이 지정 */
+  text-align: justify; /* 글자의 정렬방식 - 좌우 딱 맞게 지정 */
+}
+
+#wrap section .text p {
+  padding: 10px 0 30px 0; /* 안쪽 여백 순서 - 상단,오른쪽,하단,왼쪽 */
+  font-size: 22px;
+  color: #000;
+  line-height: 1.7; /* 각 내용의 행 높이 지정 */
+  text-align: justify; /* 글자의 정렬방식 - 좌우 딱 맞게 지정 */
+}
+
+
+
+/* footer - style.css에 설명되어있음 */
+
+#wrap footer {
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid #fff;
+  background:  rgba(147,173, 178); /* 흰색에 90% 투명도 표시*/
+}
+
+#wrap footer p {
+  color: #000000b0;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 18px;
+  font-weight: 400;
+}
